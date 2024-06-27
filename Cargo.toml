@@ -6,10 +6,11 @@ rust-version = "1.76"
 
 [dependencies]
 # You might need to modify those to point to the correct branches whilst in development... or customize the patch section below
-cb-cli = { git = "https://github.com/LimeChain/commit-boost-client", branch = "feat/launcher-docker"}
-cb-common = { git = "https://github.com/LimeChain/commit-boost-client", branch = "feat/launcher-docker"}
-cb-pbs = { git = "https://github.com/LimeChain/commit-boost-client", branch = "feat/launcher-docker"}
-cb-crypto = { git = "https://github.com/LimeChain/commit-boost-client", branch = "feat/launcher-docker"}
+cb-cli = { git = "https://github.com/LimeChain/commit-boost-client", branch = "feat/metrics"}
+cb-common = { git = "https://github.com/LimeChain/commit-boost-client", branch = "feat/metrics"}
+cb-pbs = { git = "https://github.com/LimeChain/commit-boost-client", branch = "feat/metrics"}
+cb-crypto = { git = "https://github.com/LimeChain/commit-boost-client", branch = "feat/metrics"}
+cb-metrics = { git = "https://github.com/LimeChain/commit-boost-client", branch = "feat/metrics"}
 
 alloy-rpc-types-beacon = { git = "https://github.com/alloy-rs/alloy", rev = "64feb9bc51c8021ea08535694c44de84222f474e" }
 
@@ -32,3 +33,4 @@ eyre = "0.6.12"
 # cb-common = { path = "./cb/crates/common"}
 # cb-pbs = { path = "./cb/crates/pbs"}
 # cb-crypto = { path = "./cb/crates/crypto"}
+# cb-metrics = { path = "./cb/crates/metrics"}
