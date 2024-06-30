@@ -180,7 +180,7 @@ checksum = "fd9899da7d011b4fe4c406a524ed3e3f963797dbc93b45479d60341d3a27b252"
 dependencies = [
  "alloy-sol-macro-input",
  "const-hex",
- "heck",
+ "heck 0.5.0",
  "indexmap 2.2.6",
  "proc-macro-error",
  "proc-macro2",
@@ -198,7 +198,7 @@ checksum = "d32d595768fdc61331a132b6f65db41afae41b9b97d36c21eb1b955c422a7e60"
 dependencies = [
  "const-hex",
  "dunce",
- "heck",
+ "heck 0.5.0",
  "proc-macro2",
  "quote",
  "syn 2.0.68",
@@ -452,6 +452,7 @@ checksum = "3a6c9af12842a67734c9a2e355436e5d03b22383ed60cf13cd0c18fbfe3dcbcf"
 dependencies = [
  "async-trait",
  "axum-core",
+ "axum-macros",
  "bytes",
  "futures-util",
  "http 1.1.0",
@@ -520,6 +521,18 @@ dependencies = [
  "tower-layer",
  "tower-service",
  "tracing",
+]
+
+[[package]]
+name = "axum-macros"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "00c055ee2d014ae5981ce1016374e8213682aa14d9bf40e48ab48b5f3ef20eaa"
+dependencies = [
+ "heck 0.4.1",
+ "proc-macro2",
+ "quote",
+ "syn 2.0.68",
 ]
 
 [[package]]
@@ -709,7 +722,7 @@ dependencies = [
 [[package]]
 name = "cb-cli"
 version = "0.0.1"
-source = "git+https://github.com/LimeChain/commit-boost-client?branch=feat/metrics#f714026a205d1e0571f0eb7a4ac6e0eb96400c90"
+source = "git+https://github.com/LimeChain/commit-boost-client?branch=feat/metrics#ddd9437608f61a6612522ed18e3f1b751c6b487c"
 dependencies = [
  "alloy-primitives",
  "alloy-rpc-types-beacon",
@@ -730,7 +743,7 @@ dependencies = [
 [[package]]
 name = "cb-common"
 version = "0.0.1"
-source = "git+https://github.com/LimeChain/commit-boost-client?branch=feat/metrics#f714026a205d1e0571f0eb7a4ac6e0eb96400c90"
+source = "git+https://github.com/LimeChain/commit-boost-client?branch=feat/metrics#ddd9437608f61a6612522ed18e3f1b751c6b487c"
 dependencies = [
  "alloy-primitives",
  "alloy-rpc-types-beacon",
@@ -738,8 +751,10 @@ dependencies = [
  "ethereum_ssz",
  "ethereum_ssz_derive",
  "rand",
+ "reqwest 0.12.5",
  "serde",
  "serde_json",
+ "thiserror",
  "toml",
  "tracing",
  "tracing-subscriber",
@@ -751,16 +766,18 @@ dependencies = [
 [[package]]
 name = "cb-crypto"
 version = "0.0.1"
-source = "git+https://github.com/LimeChain/commit-boost-client?branch=feat/metrics#f714026a205d1e0571f0eb7a4ac6e0eb96400c90"
+source = "git+https://github.com/LimeChain/commit-boost-client?branch=feat/metrics#ddd9437608f61a6612522ed18e3f1b751c6b487c"
 dependencies = [
  "alloy-primitives",
  "alloy-rpc-types-beacon",
  "axum",
+ "axum-extra",
  "blst",
  "cb-common",
  "ethereum_ssz",
  "ethereum_ssz_derive",
  "eyre",
+ "headers 0.4.0",
  "rand",
  "serde",
  "thiserror",
@@ -774,7 +791,7 @@ dependencies = [
 [[package]]
 name = "cb-metrics"
 version = "0.0.1"
-source = "git+https://github.com/LimeChain/commit-boost-client?branch=feat/metrics#f714026a205d1e0571f0eb7a4ac6e0eb96400c90"
+source = "git+https://github.com/LimeChain/commit-boost-client?branch=feat/metrics#ddd9437608f61a6612522ed18e3f1b751c6b487c"
 dependencies = [
  "async-trait",
  "bollard",
@@ -793,7 +810,7 @@ dependencies = [
 [[package]]
 name = "cb-pbs"
 version = "0.0.1"
-source = "git+https://github.com/LimeChain/commit-boost-client?branch=feat/metrics#f714026a205d1e0571f0eb7a4ac6e0eb96400c90"
+source = "git+https://github.com/LimeChain/commit-boost-client?branch=feat/metrics#ddd9437608f61a6612522ed18e3f1b751c6b487c"
 dependencies = [
  "alloy-primitives",
  "alloy-rpc-types-beacon",
@@ -877,7 +894,7 @@ version = "4.5.5"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "c780290ccf4fb26629baa7a1081e68ced113f1d3ec302fa5948f1c381ebf06c6"
 dependencies = [
- "heck",
+ "heck 0.5.0",
  "proc-macro2",
  "quote",
  "syn 2.0.68",
@@ -1612,6 +1629,12 @@ checksum = "54b4a22553d4242c49fddb9ba998a99962b5cc6f22cb5a3482bec22522403ce4"
 dependencies = [
  "http 1.1.0",
 ]
+
+[[package]]
+name = "heck"
+version = "0.4.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
 
 [[package]]
 name = "heck"
